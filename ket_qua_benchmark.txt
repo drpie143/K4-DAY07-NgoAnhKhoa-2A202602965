@@ -1,0 +1,74 @@
+=== KẾT QUẢ ĐO LƯỜNG BENCHMARK (HeadingChunker (max_size=400, hierarchical Markdown sections)) ===
+Tổng số tài liệu: 8 file .md | Tổng số chunks: 645
+Độ dài chunk: trung bình=327.4 ký tự | lớn nhất=400 ký tự
+Mô hình embedding: OpenAI text-embedding-3-small
+
+--- [Câu hỏi 1] Người mua có thể gửi yêu cầu trả hàng hoàn tiền trong thời hạn bao lâu sau khi nhận hàng? ---
+Áp dụng Metadata Filter: Không (None)
+  Top-1 [Score: 0.7324] (shopee-return-refund-buyer): # Chính sách trả hàng và hoàn tiền ## 3. ĐIỀU KIỆN YÊU CẦU TRẢ HÀNG/HOÀN TIỀN 3.2. Người Mua có thể gửi yêu cầ...
+  Top-2 [Score: 0.6543] (shopee-return-refund-seller): # Chính sách trả hàng và hoàn tiền — nghĩa vụ của Người Bán ## 5. QUYỀN CỦA NGƯỜI BÁN Người Bán cần gửi phản h...
+  Top-3 [Score: 0.6517] (shopee-return-refund-buyer): # Chính sách trả hàng và hoàn tiền ## 3. ĐIỀU KIỆN YÊU CẦU TRẢ HÀNG/HOÀN TIỀN 3.1. Người Mua đồng ý rằng Người...
+  => Gold Answer : 15 ngày; riêng thực phẩm tươi sống và đông lạnh là 24 giờ.
+  => Agent Answer: Người Mua có thể gửi yêu cầu trả hàng/hoàn tiền trong vòng 15 ngày kể từ lúc đơn hàng được cập nhật giao hàng thành công. Đối với các sản phẩm thực phẩm tươi sống và đông lạnh, thời hạn là 24 giờ [1].
+  => Gold rank: 1 | Agent facts: đủ | Citation: có
+  => Đánh giá: 2/2 - Chunk đúng Top-1, Agent đủ key facts và citation
+
+--- [Câu hỏi 2] Thời hạn xử lý và phản hồi khiếu nại yêu cầu trả hàng hoàn tiền của Người Bán là bao lâu? ---
+Áp dụng Metadata Filter: {'audience': 'seller'}
+  Top-1 [Score: 0.6257] (shopee-return-refund-seller): # Chính sách trả hàng và hoàn tiền — nghĩa vụ của Người Bán ## 5. QUYỀN CỦA NGƯỜI BÁN Người Bán cần gửi phản h...
+  Top-2 [Score: 0.5557] (shopee-return-refund-seller): # Chính sách trả hàng và hoàn tiền — nghĩa vụ của Người Bán ## 5. QUYỀN CỦA NGƯỜI BÁN hoàn hàng/trả tiền hoặc ...
+  Top-3 [Score: 0.5455] (shopee-antifraud-seller-penalty): # Chính sách chống hành vi gian lận và biện pháp xử lý người bán vi phạm ## 3. Biện Pháp Xử Lý Đối Với Người B...
+  => Gold Answer : Người Bán cần phản hồi trong vòng 02 ngày lịch.
+  => Agent Answer: Thời hạn Người Bán cần gửi phản hồi là trong vòng 02 ngày lịch kể từ ngày nhận được thông báo của Shopee về quyết định hoàn tiền. Nếu không phản hồi trong thời gian này, Shopee sẽ hiểu rằng Người Bán đồng ý với quyết định xử lý của Shopee [1], [2].
+  => Gold rank: 1 | Agent facts: đủ | Citation: có
+  => Đánh giá: 2/2 - Chunk đúng Top-1, Agent đủ key facts và citation
+
+--- [Câu hỏi 3] Người bán có hành vi gian lận tạo đơn hàng ảo trên Shopee bị xử phạt bồi thường bao nhiêu tiền cho mỗi đơn hàng vi phạm? ---
+Áp dụng Metadata Filter: {'audience': 'seller'}
+  Top-1 [Score: 0.7259] (shopee-antifraud-seller-penalty): # Chính sách chống hành vi gian lận và biện pháp xử lý người bán vi phạm ## 1. Hành Vi Gian Lận Trên Sàn Shope...
+  Top-2 [Score: 0.7164] (shopee-antifraud-seller-penalty): # Chính sách chống hành vi gian lận và biện pháp xử lý người bán vi phạm ## 1. Hành Vi Gian Lận Trên Sàn Shope...
+  Top-3 [Score: 0.7033] (shopee-antifraud-seller-penalty): # Chính sách chống hành vi gian lận và biện pháp xử lý người bán vi phạm ## 1. Hành Vi Gian Lận Trên Sàn Shope...
+  => Gold Answer : Tối đa 10.000.000 VND cho mỗi đơn hàng vi phạm.
+  => Agent Answer: Không tìm thấy đủ thông tin về mức xử phạt bồi thường cụ thể cho mỗi đơn hàng vi phạm trong ngữ cảnh đã cung cấp.
+  => Gold rank: không có trong Top-3 | Agent facts: thiếu | Citation: không
+  => Đánh giá: 0/2 - Không có chunk chứa key fact trong Top-3
+
+--- [Câu hỏi 4] Quy định về hạn sử dụng của hàng hóa khi Người Bán giao đi trên Shopee phải còn lại ít nhất bao nhiêu? ---
+Áp dụng Metadata Filter: Không (None)
+  Top-1 [Score: 0.8179] (shopee-seller-listing-rules): # Quy định về đăng bán sản phẩm trên Shopee ## D. QUY ĐỊNH VỀ HẠN SỬ DỤNG CỦA SẢN PHẨM ### 2. Quy định về hạn ...
+  Top-2 [Score: 0.7398] (shopee-seller-listing-rules): # Quy định về đăng bán sản phẩm trên Shopee ## D. QUY ĐỊNH VỀ HẠN SỬ DỤNG CỦA SẢN PHẨM ### 2. Quy định về hạn ...
+  Top-3 [Score: 0.7270] (shopee-seller-listing-rules): # Quy định về đăng bán sản phẩm trên Shopee ## D. QUY ĐỊNH VỀ HẠN SỬ DỤNG CỦA SẢN PHẨM ### 2. Quy định về hạn ...
+  => Gold Answer : Ít nhất 30% thời hạn sử dụng và còn ít nhất 30 ngày.
+  => Agent Answer: Người Bán chỉ được phép bán các loại hàng hóa mà khi giao đi phải còn ít nhất 30% thời hạn sử dụng và còn ít nhất 30 ngày, tính từ thời điểm hiện tại đến ngày hết hạn [1].
+  => Gold rank: 1 | Agent facts: đủ | Citation: có
+  => Đánh giá: 2/2 - Chunk đúng Top-1, Agent đủ key facts và citation
+
+--- [Câu hỏi 5] Sản phẩm mua trên Shopee được bảo hành miễn phí khi đáp ứng những điều kiện nào? ---
+Áp dụng Metadata Filter: {'audience': 'buyer'}
+  Top-1 [Score: 0.7941] (shopee-warranty-buyer): # Chính sách bảo hành cho sản phẩm mua tại Shopee ## 1. ĐIỀU KIỆN BẢO HÀNH Sản phẩm được bảo hành miễn phí nếu...
+  Top-2 [Score: 0.7246] (shopee-warranty-buyer): # Chính sách bảo hành cho sản phẩm mua tại Shopee ## 1. ĐIỀU KIỆN BẢO HÀNH Những trường hợp không được bảo hàn...
+  Top-3 [Score: 0.7199] (shopee-warranty-buyer): # Chính sách bảo hành cho sản phẩm mua tại Shopee ## 4. THỜI GIAN BẢO HÀNH: hành sẽ thông báo cụ thể đến quý k...
+  => Gold Answer : Lỗi kỹ thuật, còn hạn, có hóa đơn/mã đơn và tem bảo hành nguyên vẹn.
+  => Agent Answer: Sản phẩm mua trên Shopee được bảo hành miễn phí khi đáp ứng các điều kiện sau: sản phẩm bị lỗi kỹ thuật do nhà sản xuất, còn trong thời hạn bảo hành (theo phiếu bảo hành hoặc hệ thống bảo hành điện tử), và có hóa đơn điện tử hoặc mã đơn hàng (ID đơn hàng) khi người mua có yêu cầu [1].
+  => Gold rank: 1 | Agent facts: thiếu | Citation: có
+  => Đánh giá: 1/2 - Có chunk đúng nhưng thứ hạng/Agent/citation chưa đầy đủ
+
+=================================================================
+A/B TESTING METADATA FILTER (CÂU 2)
+=================================================================
+
+[KHÔNG LỌC]
+  Top-1 [buyer | 0.6455]: # Chính sách trả hàng và hoàn tiền ## 3. ĐIỀU KIỆN YÊU CẦU TRẢ HÀNG/HOÀN TIỀN 3.2. Người Mua có thể gửi yêu cầ...
+  Top-2 [seller | 0.6257]: # Chính sách trả hàng và hoàn tiền — nghĩa vụ của Người Bán ## 5. QUYỀN CỦA NGƯỜI BÁN Người Bán cần gửi phản h...
+  Top-3 [buyer | 0.5731]: # Chính sách trả hàng và hoàn tiền ## 3. ĐIỀU KIỆN YÊU CẦU TRẢ HÀNG/HOÀN TIỀN 3.1. Người Mua đồng ý rằng Người...
+
+[CÓ LỌC audience='seller']
+  Top-1 [seller | 0.6257]: # Chính sách trả hàng và hoàn tiền — nghĩa vụ của Người Bán ## 5. QUYỀN CỦA NGƯỜI BÁN Người Bán cần gửi phản h...
+  Top-2 [seller | 0.5557]: # Chính sách trả hàng và hoàn tiền — nghĩa vụ của Người Bán ## 5. QUYỀN CỦA NGƯỜI BÁN hoàn hàng/trả tiền hoặc ...
+  Top-3 [seller | 0.5455]: # Chính sách chống hành vi gian lận và biện pháp xử lý người bán vi phạm ## 3. Biện Pháp Xử Lý Đối Với Người B...
+
+=== TỔNG KẾT ĐÁNH GIÁ ===
+Điểm Retrieval Quality: 7/10
+Hit@1: 4/5 = 80.00%
+Hit@3: 4/5 = 80.00%
+MRR: 0.8000

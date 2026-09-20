@@ -1,0 +1,80 @@
+=== KẾT QUẢ ĐO LƯỜNG BENCHMARK (Fixed-size — Cắt 400 ký tự, overlap 50 ký tự) ===
+Tổng số tài liệu: 8 file .md | Tổng số chunks: 374
+Độ dài chunk: trung bình=396.9 ký tự | lớn nhất=400 ký tự
+Embedding backend: OpenAI
+
+--- [Câu hỏi 1] Người mua có thể gửi yêu cầu trả hàng hoàn tiền trong thời hạn bao lâu sau khi nhận hàng? ---
+Áp dụng Metadata Filter: Không (None)
+  Top-1 [Score: 0.7375] (shopee-return-refund-buyer): g thái nguyên vẹn và nguyên bao bì nhưng Người Mua không còn nhu cầu ("Trả hàng COM"), theo yêu cầu tại Điều 4...
+  Top-2 [Score: 0.6612] (shopee-return-refund-buyer): trả hàng/hoàn tiền trong vòng 24 giờ kể từ lúc đơn hàng được cập nhật giao hàng thành công. Một số trường hợp ...
+  Top-3 [Score: 0.6555] (shopee-return-refund-buyer): trả hàng trong thời hạn 03 – 05 ngày làm việc kể từ ngày Người Mua đã gửi Sản Phẩm Hoàn Trả cho đơn vị vận chu...
+  => Gold Answer : Trong vòng 15 ngày; riêng thực phẩm tươi sống và đông lạnh là 24 giờ.
+  => Agent Answer: Người Mua có thể gửi yêu cầu trả hàng/hoàn tiền trong vòng 15 (mười lăm) ngày kể từ lúc đơn hàng được cập nhật giao hàng thành công. Đối với các Sản Phẩm là thực phẩm tươi sống và đông lạnh, Người Mua cần gửi yêu cầu trong vòng 24 giờ kể từ lúc đơn hàng được cập nhật giao hàng thành công [1][2].
+  => Gold rank: 1 | Agent facts: đủ | Citation: có
+  => Đánh giá: 2/2 - Chunk đúng Top-1, Agent đủ key facts và citation
+
+--- [Câu hỏi 2] Thời hạn xử lý và phản hồi khiếu nại yêu cầu trả hàng hoàn tiền của Người Bán là bao lâu? ---
+Áp dụng Metadata Filter: {'audience': 'seller'}
+  Top-1 [Score: 0.5794] (shopee-seller-listing-rules): còn ít nhất 30 ngày, tính từ thời điểm hiện tại đến ngày hết hạn. b. Đối với mặt hàng thực phẩm, đặc biệt là t...
+  Top-2 [Score: 0.5673] (shopee-return-refund-seller): hàng/hoàn tiền của Shopee cho Người Bán trên Ứng Dụng Shopee và/hoặc thư điện tử và/hoặc tin nhắn điện thoại. ...
+  Top-3 [Score: 0.5436] (shopee-antifraud-seller-penalty): áp dụng riêng lẻ hoặc đồng thời các biện pháp bao gồm nhưng không giới hạn các biện pháp sau đối với Người Bán...
+  => Gold Answer : Người Bán cần phản hồi trong vòng 02 ngày lịch từ ngày nhận thông báo.
+  => Agent Answer: Thời hạn xử lý và phản hồi khiếu nại yêu cầu trả hàng hoàn tiền của Người Bán là trong vòng 02 ngày lịch (hoặc thời hạn khác được quy định bởi Shopee trong từng thời điểm) kể từ ngày nhận được thông báo của Shopee nếu không đồng ý với quyết định hoàn tiền của Shopee hoặc chưa nhận được Sản Phẩm Hoàn Trả [2].
+  => Gold rank: 2 | Agent facts: đủ | Citation: có
+  => Đánh giá: 1/2 - Có chunk đúng nhưng thứ hạng/Agent/citation chưa đầy đủ
+
+--- [Câu hỏi 3] Người bán có hành vi gian lận tạo đơn hàng ảo trên Shopee bị xử phạt bồi thường bao nhiêu tiền cho mỗi đơn hàng vi phạm? ---
+Áp dụng Metadata Filter: {'audience': 'seller'}
+  Top-1 [Score: 0.7060] (shopee-antifraud-seller-penalty): à Người Bán sẽ phải bồi thường cho Shopee một khoản tiền lên đến 10.000.000 VND (Bằng chữ: Mười triệu đồng) ...
+  Top-2 [Score: 0.6956] (shopee-antifraud-seller-penalty): hopee và các biện pháp xử lý đối với Người bán vi phạm (“Chính sách”) như dưới đây. ## 1. Hành Vi Gian Lận Trê...
+  Top-3 [Score: 0.6842] (shopee-seller-listing-rules): g. ## E. XỬ LÝ VI PHẠM Người Bán vi phạm một trong các quy định trên trong quá trình đăng bán sản phẩm, tùy th...
+  => Gold Answer : Tối đa 10.000.000 VND cho mỗi đơn hàng vi phạm.
+  => Agent Answer: Người bán có hành vi gian lận tạo đơn hàng ảo trên Shopee sẽ phải bồi thường cho Shopee một khoản tiền lên đến 10.000.000 VND (Bằng chữ: Mười triệu đồng) cho từng đơn hàng vi phạm. Khoản tiền này sẽ được cộng dồn theo số lượng đơn hàng vi phạm được phát hiện, và được cấn trừ vào Số dư Tài Khoản Shopee của Người Bán Vi Phạm [1].
+  => Gold rank: 1 | Agent facts: đủ | Citation: có
+  => Đánh giá: 2/2 - Chunk đúng Top-1, Agent đủ key facts và citation
+
+--- [Câu hỏi 4] Quy định về hạn sử dụng của hàng hóa khi Người Bán giao đi trên Shopee phải còn lại ít nhất bao nhiêu? ---
+Áp dụng Metadata Filter: Không (None)
+  Top-1 [Score: 0.7105] (shopee-seller-listing-rules): rõ hạn sử dụng trong mô tả sản phẩm được xem như Người Bán đăng bán hàng hết hạn sử dụng, và sẽ bị xử lý theo ...
+  Top-2 [Score: 0.6215] (shopee-return-refund-buyer): giới hạn bất kỳ chi phí giải quyết tranh chấp nào khác) có liên quan phát sinh từ hoặc có liên quan đến bất kỳ...
+  Top-3 [Score: 0.6193] (shopee-seller-listing-rules): hẩm g. Thực phẩm chức năng; h. Các sản phẩm khác bắt buộc phải có hạn sử dụng theo quy định của Nghị định số 4...
+  => Gold Answer : Ít nhất 30% thời hạn sử dụng và còn ít nhất 30 ngày.
+  => Agent Answer: Người Bán chỉ được phép bán các loại hàng hóa mà khi giao đi phải còn ít nhất 30% thời hạn sử dụng và còn ít nhất 30 ngày, tính từ thời điểm hiện tại [1].
+  => Gold rank: 3 | Agent facts: đủ | Citation: có
+  => Đánh giá: 1/2 - Có chunk đúng nhưng thứ hạng/Agent/citation chưa đầy đủ
+
+--- [Câu hỏi 5] Sản phẩm mua trên Shopee được bảo hành miễn phí khi đáp ứng những điều kiện nào? ---
+Áp dụng Metadata Filter: {'audience': 'buyer'}
+  Top-1 [Score: 0.6786] (shopee-warranty-buyer): # Chính sách bảo hành cho sản phẩm mua tại Shopee * Chỉ áp dụng cho ngành hàng được bán bởi các nhà phân phối ...
+  Top-2 [Score: 0.6690] (shopee-return-refund-buyer): g hóa được quy định tại Chính Sách Vận Chuyển Shopee và gửi trả Sản Phẩm bao gồm toàn bộ phụ kiện đi kèm, hóa ...
+  Top-3 [Score: 0.6497] (shopee-warranty-buyer): và Shopee sẽ thông báo chi tiết đến quý khách sau khi có thông tin từ bên bảo hành * Mọi chi tiết hoặc thắc mắ...
+  => Gold Answer : Lỗi kỹ thuật, còn hạn bảo hành, có hóa đơn/mã đơn và tem bảo hành nguyên vẹn.
+  => Agent Answer: Sản phẩm mua trên Shopee được bảo hành miễn phí khi đáp ứng các điều kiện sau:
+
+1. Sản phẩm phải được bán bởi các nhà phân phối được Shopee phê duyệt.
+2. Sản phẩm phải đi kèm với toàn bộ phụ kiện, hóa đơn thuế GTGT, tem phiếu bảo hành (nếu có).
+3. Sản phẩm phải trong tình trạng nguyên vẹn như khi nhận hàng.
+4. Người mua bắt buộc phải quay video và/hoặc chụp lại ảnh sản phẩm ngay khi nhận được và trong lúc đóng gói sản phẩm hoàn trả để làm bằng chứng đối chiếu/khiếu nại về sau [1][2].
+  => Gold rank: không có trong Top-3 | Agent facts: thiếu | Citation: có
+  => Đánh giá: 0/2 - Không có chunk chứa key fact trong Top-3
+
+=================================================================
+A/B TESTING METADATA FILTER (CÂU 2)
+=================================================================
+[KHÔNG LỌC]
+  Top-1 [buyer | 0.6278]: g thái nguyên vẹn và nguyên bao bì nhưng Người Mua không còn nhu cầu ("Trả hàng COM"), theo yêu cầu tại Điều 4...
+  Top-2 [seller | 0.5794]: còn ít nhất 30 ngày, tính từ thời điểm hiện tại đến ngày hết hạn. b. Đối với mặt hàng thực phẩm, đặc biệt là t...
+  Top-3 [seller | 0.5673]: hàng/hoàn tiền của Shopee cho Người Bán trên Ứng Dụng Shopee và/hoặc thư điện tử và/hoặc tin nhắn điện thoại. ...
+
+[CÓ LỌC audience='seller']
+  Top-1 [seller | 0.5794]: còn ít nhất 30 ngày, tính từ thời điểm hiện tại đến ngày hết hạn. b. Đối với mặt hàng thực phẩm, đặc biệt là t...
+  Top-2 [seller | 0.5673]: hàng/hoàn tiền của Shopee cho Người Bán trên Ứng Dụng Shopee và/hoặc thư điện tử và/hoặc tin nhắn điện thoại. ...
+  Top-3 [seller | 0.5436]: áp dụng riêng lẻ hoặc đồng thời các biện pháp bao gồm nhưng không giới hạn các biện pháp sau đối với Người Bán...
+
+Kết luận: lọc seller loại tài liệu buyer khỏi candidate set và tập trung vào quy định 02 ngày lịch.
+
+=== TỔNG KẾT ĐÁNH GIÁ ===
+Điểm Retrieval Quality: 6/10
+Hit@1: 2/5 = 40.00%
+Hit@3: 4/5 = 80.00%
+MRR: 0.5667

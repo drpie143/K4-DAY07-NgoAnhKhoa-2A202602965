@@ -143,6 +143,20 @@ PY
 
 > Lưu ý: `OpenAIEmbedder` cần biến môi trường `OPENAI_API_KEY` hợp lệ hoặc có trong file `.env`. Tương tự, `GeminiEmbedder` cần `GEMINI_API_KEY` (hoặc `GOOGLE_API_KEY`) hợp lệ.
 
+### Chạy benchmark bốn chiến lược
+
+Benchmark dùng OpenAI cho cả embedding và Agent, nên cài thêm dependency và đặt key trong `.env`:
+
+```powershell
+python -m pip install -r requirements-benchmark.txt
+python bench.py --strategy fixed_size
+python bench.py --strategy by_sentences
+python bench.py --strategy recursive
+python bench.py --strategy heading
+```
+
+Mỗi lần chạy ghi kết quả mới nhất vào `ket_qua_benchmark.txt`. Các kết quả đã chốt của cả bốn chiến lược nằm trong `ket_qua_benchmark_<strategy>.txt`; bảng so sánh nằm ở `ket_qua_benchmark_tong_hop.md`. Embedding được cache tại `data/ecommerce/.embedding_cache.json` và file này đã được git-ignore.
+
 ---
 
 ## Cấu Trúc Thư Mục

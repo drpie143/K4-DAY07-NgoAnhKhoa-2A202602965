@@ -1,0 +1,3 @@
+# Dependencies for running bench.py with the OpenAI backends.
+-r requirements.txt
+openai==3.16.2
